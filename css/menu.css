@@ -76,7 +76,7 @@ html, body {
 }
 .smryWrap {
     z-index: 1;
-    position: sticky;
+    position: fixed;
     bottom: 0;
 }
 .smry {
