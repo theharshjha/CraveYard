@@ -1,95 +1,173 @@
-* {
-    width: 100%;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box;
+    outline: none;
+    outline-color: transparent;
 }
 
-html,
+html {
+    height: 100%;
+}
+
 body {
     height: 100%;
-    min-width: 100%;
-    min-height: 100%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
     max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+body {
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.wrap {
+    width: 768px;
+    height: 90vh;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* border: solid 1px red; */
+}
+
+.wrapLeft {
+    width: 45%;
+    min-height: 100%;
     max-height: 100%;
 }
 
-body {
-    background-color: #080710;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.wrapRight {
+    width: 55%;
+    position: relative;
 }
 
-.formWrapper {
-    border-right: .1px solid red;
-    border-bottom: .1px solid red;
-    border-left: .1px solid blue;
-    border-top: .1px solid blue;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 10px;
-    max-width: 500px;
+
+.appView {
+    height: 100%;
+    padding: 6vh;
 }
 
-form {
-    background-color: rgba(255, 255, 255, 0.13);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-    padding: 32px;
+@media (max-width: 768px) {
+    .wrap {
+        width: 100%;
+        height: 100%;
+    }
+
+    .wrapLeft {
+        display: none;
+    }
+
+    .wrapRight {
+        height: 100%;
+        width: 100%;
+    }
+
+    .appView {
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        padding: 6vh;
+    }
 }
 
-form * {
-    font-family: 'Poppins', sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-}
-
-form h3 {
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-top: 16px;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-input {
-    display: block;
-    height: 48px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.07);
-    border-radius: 4px;
-    margin-top: 4px;
-    padding-left: 12px;
-    font-size: 14px;
+.wrapTop,
+.wrapTop>* {
+    font-size: 4vh;
+    margin: 0;
     font-weight: 300;
 }
 
-::placeholder {
-    color: #e5e5e5;
+.wrapTop>h1 {
+    font-size: 4.8vh;
+    font-weight: 400;
+    margin-bottom: 4.8vh;
+}
+
+.wrapTop span {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.wrapForm {
+    position: absolute;
+    bottom: 10vh;
+    width: calc(100% - 12vh);
+}
+
+.wrapInput {
+    /* height: 7.5vh; */
+    margin-top: 2vh;
+    background: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+input {
+    box-shadow: inset 0 -0.5vh rgba(0, 0, 0, 0.1);
+    margin-left: 1.5vh;
+    padding-bottom: 2vh;
+    outline: none;
+    width: 100%;
 }
 
 button {
-    margin-top: 20px;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
+    padding-top: 10vh;
+    text-decoration: none;
+    color: #0f9ede;
+    font-size: 4.8vh;
+    font-weight: 400;
+    background: none;
 }
 
-p {
-    margin-top: 8px;
+.wrapSignup {
+    position: absolute;
+    bottom: 0;
+    height: 10vh;
+    line-height: 10vh;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.wrapSignup>a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.45);
+    font-weight: 400;
 }
